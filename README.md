@@ -1,14 +1,16 @@
 # Angular Media ($media)
 
-Angular Media provides you with an easy service for doing media queries in Angular, called $media.
+Angular Media provides you with an easy service for doing media queries in Angular, called $media. I first made this mostly for fun, but it has turned out to be really useful at times.
 
-The $media service helps you to easily do media queries in your templates and in your controllers, services and directives, via the $media.query for easy to use defaults or $media.raw methods for raw queries.
+The $media service helps you to easily do media queries in your templates and in your controllers, services and directives. It contains two methods, $media.query for easy to use defaults and $media.raw for raw queries.
 
 
 ### Why use $media
-Doing media queries in javascript is not terribly complicated. What $media gives you is a set of ready made defaults for ease of use (that you can configure if you want). $media also sets up a propper data binding to templates. The result of a call to $media will update as the screen resizes, freeing you from having to do watches in your scope.
+There are times when you want to base something on the screen-size of the user, but you can't control it via css. Perhaps you want to fetch a different number of objects from your server depending on the screen size, or you might have a text that should truncate on a number of characters based on the screen size. In these cases you will have to turn to javascript to do the media query.
 
-The default queries you get are 'phone', 'tablet', 'laptop' and 'desktop' and they are called using a simple method.
+Doing media queries in javascript is not terribly complicated in and of itself, what $media gives you is a set of ready made defaults for ease of use (that you can configure if you want). $media also sets up a propper data binding to templates, the result of a call to $media will update as the screen resizes, freeing you from having to do watches in your scope.
+
+The default queries you get are 'phone', 'tablet', 'laptop' and 'desktop' and they are called using the query method.
 
 ```
 $media.query('phone')
@@ -17,11 +19,8 @@ $media.query('phone')
 These defaults correspond to the basic sizes that exists in bootstraps responsive design, with laptop being the 980px wide screen and desktop being the 1200px wide screen.
 
 
-### When to use $media
-First of all, if you can do your media query directly in css, like if you want to hide or show elements depending on the screen size, then do so! Don't let javascript replace css.
-
-However, if you want to do something more complex than that, then doing the media queries in javascript can help. Perhaps you want to fetch a different number of objects from your server depending on the screen size, or you might have a text that should truncate based on the screen size. In these cases css won't cut it, and $media comes in to save the day.
-
+### CSS vs JS
+It's always bad practice to replace css with javascript. Hiding and showing elements and things like that are best left to css media queries instead. Use $media when doing things that css can't handle.
 
 
 ## How to use $media
@@ -83,10 +82,7 @@ app.config(['MediaQueryProvider', function(MediaQueryProvider) {
 ### $media.raw
 You are not limited to only using the default queries. $media.raw lets you use any query you like.
 
-```javascript
-app.service('myService', ['$media', function($media) {
-    if ($media.raw('(min-width:980px) and print')) {
-        alert('We are viewing as print, and with min size of 980px');
-    }
+```
+    <p>We are on a phone in print mode: {{$media.raw('(min-width:980px) and print')}}</p>
 }])
 ```
