@@ -38,10 +38,10 @@ You are now ready to use the $media service, which is accessible in your templat
 ```
     <h1>In a template</h1>
     <p>We are on a phone: {{$media.query('phone')}}</p>
-    <p>Try this for yourself and then resize the window. The value will update as the size of the window changes! You can use the query in expressions and send it to directives.</p>
-    <p ng-hide="$media.query('phone')">This will be hidden on a phone, but don't do this! This is just to illustrate the point, in reality you should never use javascript in cases where css will do just fine.</p>
-
+    <p>Try this for yourself and then resize the window. The value will update as the size of the window changes!</p>
+    <p>You can use the query inside any expression, so you could as an example trigger a ng-switch with it.</p>
 ```
+
 
 ```javascript
 // In javascript
