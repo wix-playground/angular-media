@@ -8,6 +8,14 @@ The $media service helps you to easily do media queries in your templates and in
 ### Why use $media
 Doing media queries in javascript is not terribly complicated. What $media gives you is a set of ready made defaults for ease of use (that you can configure if you want). $media also sets up a propper data binding to templates. The result of a call to $media will update as the screen resizes, freeing you from having to do watches in your scope.
 
+The default queries you get are 'phone', 'tablet', 'laptop' and 'desktop' and they are called using a simple method.
+
+```
+$media.query('phone')
+```
+
+These defaults correspond to the basic sizes that exists in bootstraps responsive design, with laptop being the 980px wide screen and desktop being the 1200px wide screen.
+
 
 ### When to use $media
 First of all, if you can do your media query directly in css, like if you want to hide or show elements depending on the screen size, then do so! Don't let javascript replace css.
