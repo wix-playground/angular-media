@@ -8,7 +8,7 @@ The $media service helps you to easily do media queries in your templates and in
 ### Why use $media
 There are times when you want to base something on the screen-size of the user, but you can't control it via css. Perhaps you want to fetch a different number of objects from your server depending on the screen size, or you might have a text that should truncate on a number of characters based on the screen size. In these cases you will have to turn to javascript to do the media query.
 
-Doing media queries in javascript is not terribly complicated in and of itself, what $media gives you is a set of ready made defaults for ease of use (that you can configure if you want). $media also sets up a proper data binding to templates, the result of a call to $media will update as the screen resizes, freeing you from having to do watches in your scope. Usefull when designing things for tablets and phone where you want to differentiate between orientations.
+Doing media queries in javascript is not terribly complicated in and of itself, what $media gives you is a set of ready made defaults for ease of use (that you can configure if you want). $media also sets up a propper data binding to templates, the result of a call to $media will update as the screen resizes, freeing you from having to do watches in your scope.
 
 The default queries you get are 'phone', 'tablet', 'laptop' and 'desktop' and they are called using the query method.
 
@@ -53,18 +53,14 @@ app.service('myService', ['$media', function($media) {
 ```
 
 $media.query uses a pre defined set of media queries. The starting set of default queries are:
+'phone': '(max-width:480px)'
+'tablet': '(min-width:481px) and (max-width:979px)'
+'laptop': '(min-width:980px) and (max-width:1199px)'
+'desktop': '(min-width:1200px)''
 
-```
-{
-    'phone': '(max-width:480px)',
-    'tablet': '(min-width:481px) and (max-width:979px)',
-    'laptop': '(min-width:980px) and (max-width:1199px)',
-    'desktop': '(min-width:1200px)''
-}
-```
 
 ### MediaQueryProvider
-The MediaQueryProvider lets you redefine the default media queries of $media. You can add, change or completely rewrite them as you see fit by calling MediaQueryProvider.setShortcuts(). setShortcuts takes an object like the one above that maps names to queries.
+The MediaQueryProvider lets you redefine the default media queries of $media. You can add, change or compleatly rewrite them as you see fit by calling MediaQueryProvider.setShortcuts(). setShortcuts takes an object like the one above that maps names to queries.
 
 So if we wanted to rename all the default queries to s, m, l, and xl, and also add a 'print' query we would do this.
 
