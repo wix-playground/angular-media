@@ -16,7 +16,7 @@ The default queries you get are 'phone', 'tablet', 'laptop' and 'desktop' and th
 $media.query('phone')
 ```
 
-These defaults correspond to the basic sizes that exists in bootstraps responsive design, with laptop being the 980px wide screen and desktop being the 1200px wide screen.
+These defaults correspond to the basic sizes that exists in bootstraps responsive design, with laptop being the 980px wide screen and desktop being the 1200px wide screen. NOTE - I will be updating this shortly to conform with the bootstrap 3 sizes and names instead.
 
 
 ### CSS vs JS
@@ -88,5 +88,4 @@ You are not limited to only using the default queries. $media.raw lets you use a
 
 ```
     <p>We are on a phone in print mode: {{$media.raw('(min-width:980px) and print')}}</p>
-}])
 ```
