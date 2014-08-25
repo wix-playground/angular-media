@@ -18,7 +18,6 @@
     "pom.xml",
     "*.json",
     "*.conf.js",
-    "app",
     "test",
     "maven",
     "*.sublime*"
