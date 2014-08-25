@@ -1,8 +1,7 @@
 'use strict';
 
 
-angular.module('angular.media')
-  .service('$media', function (mediaQueries, $rootScope, $window, debounce) {
+angular.module('angular.media').service('$media',['mediaQueries', '$rootScope', '$window', 'debounce', function (mediaQueries, $rootScope, $window, debounce) {
 
     var predefinedMediaQueriesStatuses = {};
 
@@ -39,5 +38,5 @@ angular.module('angular.media')
       },
       predefinedMediaQueriesStatuses: predefinedMediaQueriesStatuses
     };
-  });
+  }]);
 
