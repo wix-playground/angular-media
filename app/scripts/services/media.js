@@ -3,18 +3,18 @@
 
 angular.module('angular.media').service('$media',['mediaQueries', '$rootScope', '$window', 'debounce', function (mediaQueries, $rootScope, $window, debounce) {
 
-    var predefinedMediaQueriesStatuses = {};
+    var predefinedQueriesStatus = {};
 
     var updatePredefinedMediaQueries = function () {
       var wasMediaChanged;
       _(mediaQueries).forEach(function (query, name) {
-        var oldValue = predefinedMediaQueriesStatuses[name];
+        var oldValue = predefinedQueriesStatus[name];
         var newValue = $window.matchMedia(mediaQueries[name]).matches;
-        predefinedMediaQueriesStatuses[name] = newValue;
+        predefinedQueriesStatus[name] = newValue;
         wasMediaChanged = wasMediaChanged || oldValue !== newValue;
       });
       if (wasMediaChanged) {
-        $rootScope.$broadcast('mediaQueriesChanged', predefinedMediaQueriesStatuses);
+        $rootScope.$broadcast('mediaQueriesChanged', predefinedQueriesStatus);
       }
     };
 
@@ -36,7 +36,7 @@ angular.module('angular.media').service('$media',['mediaQueries', '$rootScope', 
       raw: function (rawQuery) {
         return $window.matchMedia(rawQuery).matches;
       },
-      predefinedMediaQueriesStatuses: predefinedMediaQueriesStatuses
+      predefinedQueriesStatus: predefinedQueriesStatus
     };
   }]);
 

@@ -11,8 +11,8 @@ describe('media query provider', function () {
       expect(mediaQueries).toEqual({
         phone : '(max-width:480px)',
         tablet : '(min-width:481px) and (max-width:979px)',
-        laptop : '(min-width:980px) and (max-width:1280px)',
-        desktop : '(min-width:1281px)'
+        laptop : '(min-width:980px) and (max-width:1279px)',
+        desktop : '(min-width:1280px)'
       });
     });
   });
@@ -27,8 +27,8 @@ describe('media query provider', function () {
       expect(mediaQueries).toEqual({
         'phone': '(max-width:170px)',
         'tablet': '(min-width:481px) and (max-width:979px)',
-        'laptop': '(min-width:980px) and (max-width:1280px)',
-        'desktop': '(min-width:1281px)'
+        'laptop': '(min-width:980px) and (max-width:1279px)',
+        'desktop': '(min-width:1280px)'
       });
     });
   });
@@ -43,8 +43,8 @@ describe('media query provider', function () {
       expect(mediaQueries).toEqual({
           phone : '(max-width:170px)',
           tablet : '(min-width:481px) and (max-width:979px)',
-          laptop : '(min-width:980px) and (max-width:1280px)',
-          desktop : '(min-width:1281px)',
+          laptop : '(min-width:980px) and (max-width:1279px)',
+          desktop : '(min-width:1280px)',
           phone2 : '(max-width:170px)'
         }
       );

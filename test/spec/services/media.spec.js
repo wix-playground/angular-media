@@ -33,7 +33,7 @@ describe('Service: media', function () {
   }));
 
   it('should get predefined media queries statuses', function () {
-    expect($media.predefinedMediaQueriesStatuses).toEqual({
+    expect($media.predefinedQueriesStatus).toEqual({
       phone : false,
       tablet : false,
       laptop : false,
@@ -45,7 +45,7 @@ describe('Service: media', function () {
 //  iit('should broadcast mediaChanged event with predefined media queries in case one of the predefined queries changed', inject(function ($window, mediaQueries, $rootScope, $timeout) {
 //    var mediaSpy = jasmine.createSpy('mediaChanged');
 //    $rootScope.$on('mediaQueriesChanged', mediaSpy);
-//    console.log($media.predefinedMediaQueriesStatuses);
+//    console.log($media.predefinedQueriesStatus);
 //
 //    window.matchMedia = function() {
 //      return {
@@ -58,7 +58,7 @@ describe('Service: media', function () {
 //    angular.element($window).triggerHandler('resize');
 //
 //   $timeout.flush();
-//    console.log($media.predefinedMediaQueriesStatuses);
+//    console.log($media.predefinedQueriesStatus);
 //    expect(mediaSpy.callCount).toBe(1);
 //
 //  }));
